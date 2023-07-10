@@ -1,0 +1,8 @@
+CREATE TABLE item_do_pedido (
+  id int4 NOT NULL GENERATED ALWAYS AS IDENTITY( INCREMENT BY 1 MINVALUE 1 MAXVALUE 2147483647 START 1 CACHE 1 NO CYCLE),
+  descricao varchar(255) DEFAULT NULL,
+  quantidade int4 NOT NULL,
+  pedido_id int4 NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (pedido_id) REFERENCES pedidos(id)
+)
